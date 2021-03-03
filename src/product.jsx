@@ -19,13 +19,14 @@ const Product = ({data}) => {
     return (
     <div>
     {loading === true ? (
-        <div>
+        <div className="loading">
           <LoadingSpinner></LoadingSpinner>
         </div>
       ) : (
         <div>
-          <h2 className="my-4">Products</h2>
+          
           <table className="table">
+          <h2>Product List</h2>
           <tbody>
             <tr>
               <th>Name</th>
@@ -37,7 +38,7 @@ const Product = ({data}) => {
                   <td>{product.name}</td>
                   <td>{product.price}</td>
                   <td>
-                    <button onClick ={() => handleClick(index + 1)}> View Details </button>
+                    <button onClick ={() => handleClick(index)}> View Details </button>
                   </td>
               </tr>
             ))}

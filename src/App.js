@@ -35,14 +35,9 @@ const defaultProducts = [
 function App() {
   const [products, setProduct] = useState(defaultProducts);
 
-  const [currentSelectedProduct, setCurrentSelectedProduct] = useState("");
-
-
-  const clicked = (productName) => {
-    setCurrentSelectedProduct(productName)
-  }
-
   return (
+    <div className="App">
+        
     <Router>
       <div>
         <nav>
@@ -60,7 +55,7 @@ function App() {
               <Product data={products}/>
           </Route>
           <Route exact path="/productDetails/:index_number">
-            <ProductDetails data={currentSelectedProduct}/>
+            <ProductDetails data={products}/>
           </Route>
           <Route exact path="/404">
             <NotFoundPage/>
@@ -72,6 +67,7 @@ function App() {
       </div>
     
     </Router>
+    </div>
   );
 }
 
